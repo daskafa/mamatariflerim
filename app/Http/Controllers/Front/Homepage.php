@@ -16,4 +16,10 @@ class Homepage extends Controller
         $data['categories'] = Category::inRandomOrder()->get();
         return view('front.homepage', $data);
     }
+
+    public function single($slug){
+        $data['article'] = Article::whereSlug($slug)->first() ?? abort(403, 'Böyle bir yazı bulunamadı');
+        $data['categories'] = Category::inRandomOrder()->get();
+        return view('front.single');
+    }
 }
