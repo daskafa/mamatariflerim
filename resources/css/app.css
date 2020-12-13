@@ -1,0 +1,6 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+/* .bg-baby-1{
+    background-color:blue;
+} */
+@import "tailwindcss/utilities";
