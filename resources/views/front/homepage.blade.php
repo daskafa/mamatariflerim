@@ -39,52 +39,31 @@ mamatariflerim | zor ama güzel günlerinizde daima yanınızda
         </div>
     </div>
 
-    <div class="text-center text-5xl pt-8 font-bold">
+    <div class="text-center text-3xl pt-8 font-bold">
         <h3>- SON TARİFLER -</h3>
     </div>
 
     <div class="container mx-auto">
         <div class="grid grid-cols-4 pt-8 gap-4 mb-20">
+            @foreach ($articles as $article)
             <div class="grid-rows-1 mx-auto max-w-xs bg-white p-4">
-                <img class="w-auto h-auto" src="https://picsum.photos/800/800">
+                <div class="relative">
+                    <img class="w-auto h-auto" src="{{ $article->image }}">
+                    <p class="absolute top-0 m-3 px-1 rounded-md bg-gray-100 bg-opacity-50 text-black font-bold">{{ $article->created_at }}</p>
+                </div>
                 <div class="mt-3">
-                    <h5 class="mb-3"><b>Title</b></h5>
-                    <p class="text-justify mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo quidem temporibus excepturi natus veritatis. Ex ea atque ut magni. Quas nam porro quis tempora a veniam aperiam, dignissimos atque distinctio!</p>
+                    <h5 class="mb-3"><b>{{ $article->title }}</b></h5>
+                    <p class="text-justify mb-3">{{Illuminate\Support\Str::limit($article->content, 250, '...') }}</p>
                     <hr class="mb-3">
-                    <p><b>tarih/yazar</b></p>
+                    <p><b>tarih/yazar</b></p><br>
+                    <em>Kategori: {{ $article->getCategory->name }}</em>
                 </div>
             </div>
-            <div class="grid-rows-1 mx-auto max-w-xs bg-white p-4">
-                <img class="w-auto h-auto" src="https://picsum.photos/800/800">
-                <div class="mt-3">
-                    <h5 class="mb-3"><b>Title</b></h5>
-                    <p class="text-justify mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo quidem temporibus excepturi natus veritatis. Ex ea atque ut magni. Quas nam porro quis tempora a veniam aperiam, dignissimos atque distinctio!</p>
-                    <hr class="mb-3">
-                    <p><b>tarih/yazar</b></p>
-                </div>
-            </div>
-            <div class="grid-rows-1 mx-auto max-w-xs bg-white p-4">
-                <img class="w-auto h-auto" src="https://picsum.photos/800/800">
-                <div class="mt-3">
-                    <h5 class="mb-3"><b>Title</b></h5>
-                    <p class="text-justify mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo quidem temporibus excepturi natus veritatis. Ex ea atque ut magni. Quas nam porro quis tempora a veniam aperiam, dignissimos atque distinctio!</p>
-                    <hr class="mb-3">
-                    <p><b>tarih/yazar</b></p>
-                </div>
-            </div>
-            <div class="grid-rows-1 mx-auto max-w-xs bg-white p-4">
-                <img class="w-auto h-auto" src="https://picsum.photos/800/800">
-                <div class="mt-3">
-                    <h5 class="mb-3"><b>Title</b></h5>
-                    <p class="text-justify mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo quidem temporibus excepturi natus veritatis. Ex ea atque ut magni. Quas nam porro quis tempora a veniam aperiam, dignissimos atque distinctio!</p>
-                    <hr class="mb-3">
-                    <p><b>tarih/yazar</b></p>
-                </div>
-            </div>
+            @endforeach
         </div>
 
 
-        @include('front.widgets.categoryWidget')
+        {{-- @include('front.widgets.categoryWidget') --}}
 
 
         <div class="grid grid-cols-1 mb-20">
@@ -92,7 +71,7 @@ mamatariflerim | zor ama güzel günlerinizde daima yanınızda
                 <img src="https://picsum.photos/1200/100">
             </div>
         </div>
-        <div class="grid grid-cols-4 gap-4 mb-20">
+        {{-- <div class="grid grid-cols-4 gap-4 mb-20">
             <div class="grid-rows-1 mx-auto max-w-xs bg-white p-4">
                 <img class="w-auto h-auto" src="https://picsum.photos/800/800">
                 <div class="mt-3">
@@ -129,7 +108,7 @@ mamatariflerim | zor ama güzel günlerinizde daima yanınızda
                     <p><b>tarih/yazar</b></p>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </div>
 
     <div class="pb-8">
