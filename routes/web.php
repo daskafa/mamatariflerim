@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Front\Homepage;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,11 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('front.homepage');
-});
+Route::get('/', [Homepage::class, 'index'])->name('homepage');
 
-Route::get('/single', function () {
-    return view('front.single');
-});
+// Route::get('/single', function () {
+//     return view('front.single');
+// });
 

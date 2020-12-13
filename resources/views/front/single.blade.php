@@ -108,18 +108,7 @@ mamatariflerim | zor ama güzel günlerinizde daima yanınızda
             <div class="mt-28">
                 <img src="https://picsum.photos/142/192" class="w-full object-cover h-60" alt="">
             </div>
-            <div class="mt-28">
-                <h3 class="text-indigo-700 font-bold">Popüler Kategoriler</h3>
-                <div class="relative">
-                    <ul>
-                        <li class="border-b-2 border-gray-200 border-dashed mt-6 pb-2"><a href="#">test <span class="absolute right-0">24</span></a></li>
-                        <li class="border-b-2 border-gray-200 border-dashed mt-2 pb-2"><a href="#">test <span class="absolute right-0">24</span></a></li>
-                        <li class="border-b-2 border-gray-200 border-dashed mt-2 pb-2"><a href="#">test <span class="absolute right-0">24</span></a></li>
-                        <li class="border-b-2 border-gray-200 border-dashed mt-2 pb-2"><a href="#">test <span class="absolute right-0">24</span></a></li>
-                        <li class="border-b-2 border-gray-200 border-dashed mt-2 pb-2"><a href="#">test <span class="absolute right-0">24</span></a></li>
-                    </ul>
-                </div>
-            </div>
+            @include('front.widgets.categoryWidget')
             {{-- <div class="mt-28">
                 <h3 class="text-indigo-700 font-bold">Diğer Lezzetli Tarifler</h3>
                 <div class="grid grid-cols-6">

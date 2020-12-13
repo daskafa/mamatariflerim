@@ -82,6 +82,11 @@ mamatariflerim | zor ama güzel günlerinizde daima yanınızda
                 </div>
             </div>
         </div>
+
+
+        @include('front.widgets.categoryWidget')
+
+
         <div class="grid grid-cols-1 mb-20">
             <div class="bg-white p-5 w-4/5 mx-auto">
                 <img src="https://picsum.photos/1200/100">
