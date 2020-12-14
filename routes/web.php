@@ -16,5 +16,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [Homepage::class, 'index'])->name('homepage');
 
-Route::get('tarifler/{slug}', [Homepage::class, 'single'])->name('single');
+Route::get('{category}/{slug}', [Homepage::class, 'single'])->name('single');
 

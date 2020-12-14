@@ -4,7 +4,7 @@
 mamatariflerim | zor ama güzel günlerinizde daima yanınızda
 @endsection
 
-    <div class="bg-yellow-400">
+    <div class="">
         <div class="container mx-auto">
             <div class="grid">
                 <div class="grid-rows-1">
@@ -53,7 +53,7 @@ mamatariflerim | zor ama güzel günlerinizde daima yanınızda
                 </div>
                 <div class="mt-3">
                     <h5 class="mb-3"><b>{{ $article->title }}</b></h5>
-                    <p class="text-justify mb-3"><a href="{{ route('single', $article->slug) }}">{{Illuminate\Support\Str::limit($article->content, 250, '...') }}</a></p>
+                    <p class="text-justify mb-3"><a href="{{ route('single', [$article->getCategory->slug, $article->slug]) }}">{{!! Illuminate\Support\Str::limit($article->content, 250, '...') !!}}</a></p>
                     <hr class="mb-3">
                     <p><b>yazar: </b></p><br>
                     <em>Kategori: {{ $article->getCategory->name }}</em>

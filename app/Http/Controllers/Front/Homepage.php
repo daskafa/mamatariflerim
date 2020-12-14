@@ -17,9 +17,12 @@ class Homepage extends Controller
         return view('front.homepage', $data);
     }
 
-    public function single($slug){
-        $data['article'] = Article::whereSlug($slug)->first() ?? abort(403, 'Böyle bir yazı bulunamadı');
+    public function single($category, $slug){
+        $category = Category::whereSlug($category)->first() ?? abort(403, 'Böyle bir kategori bulunamadı');
+        $article = Article::whereSlug($slug)->whereCategoryId($category->id)->first() ?? abort(403, 'Böyle bir yazı bulunamadı'); // slugda gelen kategorinin içerikteki gibi bir yazısı varmı diye ekstra kontrol ediliyor
+        $article->increment('hit');
+        $data['article'] = $article;
         $data['categories'] = Category::inRandomOrder()->get();
-        return view('front.single');
+        return view('front.single', $data);
     }
 }

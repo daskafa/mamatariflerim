@@ -80,16 +80,7 @@ mamatariflerim | zor ama güzel günlerinizde daima yanınızda
             <p class="mt-2 text-gray-400">tarih / yazar</p>
             <div class="mt-5 mb-5">
                 <img src="https://picsum.photos/700/500" class="rounded w-full object-cover h-82">
-                <div class="break-all">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum mollitia et debitis vel porro quas, cumque id non doloribus minima obcaecati, culpa ullam rem quae architecto. Officiis corrupti ducimus totam.
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum mollitia et debitis vel porro quas, cumque id non doloribus minima obcaecati, culpa ullam rem quae architecto. Officiis corrupti ducimus totam.</p>
-                    <ul class="mt-4">
-                        <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis sint nobis repudiandae adipisci dolor maxime corrupti commodi.</li>
-                        <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis sint nobis repudiandae adipisci dolor maxime corrupti commodi.</li>
-                        <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis sint nobis repudiandae adipisci dolor maxime corrupti commodi.</li>
-                        <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis sint nobis repudiandae adipisci dolor maxime corrupti commodi.</li>
-                    </ul>
-                </div>
+                {{!! $article->content !!}}
             </div>
             <hr>
             <div>
