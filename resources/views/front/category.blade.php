@@ -45,27 +45,7 @@ mamatariflerim | zor ama güzel günlerinizde daima yanınızda
 
     <div class="container mx-auto">
         <div class="grid grid-cols-4 pt-8 gap-4 mb-20">
-            @if (count($articles) > 0)
-            @foreach ($articles as $article)
-            <div class="grid-rows-1 mx-auto max-w-xs bg-white p-4">
-                <div class="relative">
-                    <img class="w-auto h-auto" src="{{ $article->image }}">
-                    <p class="absolute top-0 m-3 px-1 rounded-md bg-gray-100 bg-opacity-50 text-black font-bold">{{ $article->created_at->diffForHumans() }}</p>
-                </div>
-                <div class="mt-3">
-                    <h5 class="mb-3"><b>{{ $article->title }}</b></h5>
-                    <p class="text-justify mb-3"><a href="{{ route('single', [$article->getCategory->slug, $article->slug]) }}">{{!! Illuminate\Support\Str::limit($article->content, 250, '...') !!}}</a></p>
-                    <hr class="mb-3">
-                    <p><b>yazar: </b></p><br>
-                    <em>Kategori: {{ $article->getCategory->name }}</em>
-                </div>
-            </div>
-            @endforeach
-            @else
-            <div>
-                <h1>Bu kategoriye ait yazı bulunamadı</h1>
-            </div>
-            @endif
+            @include('front.widgets.articleList')
         </div>
 
 
@@ -77,52 +57,12 @@ mamatariflerim | zor ama güzel günlerinizde daima yanınızda
                 <img src="https://picsum.photos/1200/100">
             </div>
         </div>
-        {{-- <div class="grid grid-cols-4 gap-4 mb-20">
-            <div class="grid-rows-1 mx-auto max-w-xs bg-white p-4">
-                <img class="w-auto h-auto" src="https://picsum.photos/800/800">
-                <div class="mt-3">
-                    <h5 class="mb-3"><b>Title</b></h5>
-                    <p class="text-justify mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo quidem temporibus excepturi natus veritatis. Ex ea atque ut magni. Quas nam porro quis tempora a veniam aperiam, dignissimos atque distinctio!</p>
-                    <hr class="mb-3">
-                    <p><b>tarih/yazar</b></p>
-                </div>
-            </div>
-            <div class="grid-rows-1 mx-auto max-w-xs bg-white p-4">
-                <img class="w-auto h-auto" src="https://picsum.photos/800/800">
-                <div class="mt-3">
-                    <h5 class="mb-3"><b>Title</b></h5>
-                    <p class="text-justify mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo quidem temporibus excepturi natus veritatis. Ex ea atque ut magni. Quas nam porro quis tempora a veniam aperiam, dignissimos atque distinctio!</p>
-                    <hr class="mb-3">
-                    <p><b>tarih/yazar</b></p>
-                </div>
-            </div>
-            <div class="grid-rows-1 mx-auto max-w-xs bg-white p-4">
-                <img class="w-auto h-auto" src="https://picsum.photos/800/800">
-                <div class="mt-3">
-                    <h5 class="mb-3"><b>Title</b></h5>
-                    <p class="text-justify mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo quidem temporibus excepturi natus veritatis. Ex ea atque ut magni. Quas nam porro quis tempora a veniam aperiam, dignissimos atque distinctio!</p>
-                    <hr class="mb-3">
-                    <p><b>tarih/yazar</b></p>
-                </div>
-            </div>
-            <div class="grid-rows-1 mx-auto max-w-xs bg-white p-4">
-                <img class="w-auto h-auto" src="https://picsum.photos/800/800">
-                <div class="mt-3">
-                    <h5 class="mb-3"><b>Title</b></h5>
-                    <p class="text-justify mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo quidem temporibus excepturi natus veritatis. Ex ea atque ut magni. Quas nam porro quis tempora a veniam aperiam, dignissimos atque distinctio!</p>
-                    <hr class="mb-3">
-                    <p><b>tarih/yazar</b></p>
-                </div>
-            </div>
-        </div> --}}
     </div>
 
     <div class="pb-8">
         <ul class="flex justify-center">
-            <li class="bg-yellow-400 text-white mr-3 py-2 px-3"><a href="#">1</a></li>
-            <li class="bg-yellow-400 text-white mr-3 py-2 px-3"><a href="#">2</a></li>
-            <li class="bg-yellow-400 text-white mr-3 py-2 px-3"><a href="#">3</a></li>
-            <li class="bg-yellow-400 text-white py-2 px-3"><a href="#">Sonraki</a></li>
+            {{-- <li class="bg-yellow-400 text-white mr-3 py-2 px-3"><a href="#">1</a></li> --}}
+            {{ $articles->links() }}
         </ul>
     </div>
 
