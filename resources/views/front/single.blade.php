@@ -4,45 +4,7 @@
 mamatariflerim | zor ama güzel günlerinizde daima yanınızda
 @endsection
 
-    <div class="bg-baby-1">
-        <div class="container mx-auto">
-            <div class="grid">
-                <div class="grid-rows-1">
-                    <img class="w-36 h-auto mx-auto mt-32 rounded" src="https://picsum.photos/300/300">
-                </div>
-            </div>
-            <div class="grid">
-                <div class="grid-rows-1 mt-5 mb-5">
-                    <p class="text-center text-gray-800 text-xl">mamatariflerim.com olarak bebeğiniz ve sizin bu güzel ama
-                        birazda zorlu beslenme <br> yolculuğunda biraz da olsa omuzlarınızdaki yükü alarak yardımcı
-                        olmak için buradayız...</p>
-                </div>
-            </div>
-            <div class="grid pb-14">
-                <div class="grid-rows-1">
-                    <div class="flex justify-center">
-                        <a href="#"
-                            class="transition duration-300 rounded text-white m-3 py-2 px-10 bg-black hover:bg-gray-700">
-                            <p class="tracking-widest">Tüm Tarifleri Gör</p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <div class="bg-indigo-700">
-        <div class="container mx-auto">
-            <ul class="flex justify-center p-5 text-white">
-                <li class="mr-9"><a href="">+6 Ay</a></li>
-                <li class="mr-9"><a href="">+9 Ay</a></li>
-                <li class="mr-9"><a href="">Tüm Tarifler</a></li>
-                <li class="mr-9"><a href="">Psikolojik Destek</a></li>
-                <li class="mr-9"><a href="">Neden Buradayız</a></li>
-                <li class=""><a href="">İletişim</a></li>
-            </ul>
-        </div>
-    </div>
 
     <div class="bg-white">
         <div class="container mx-auto">
@@ -50,15 +12,15 @@ mamatariflerim | zor ama güzel günlerinizde daima yanınızda
                 <div class="grid grid-cols-2 gap-8 w-full">
                     <div class="grid-rows-1">
                         <div class="container mx-auto flex items-center pl-44">
-                            <svg class="h-14 w-14 rounded bg-yellow-300 text-white p-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <svg class="h-14 w-14 rounded bg-pink-700 text-white p-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
                             </svg>
-                            <b class="mx-3.5 text-lg text-indigo-700">mamatariflerim.com</b>
+                            <b class="mx-3.5 text-lg text-pink-700">mamatariflerim.com</b>
                             <p class="text-lg text-gray-400 italic">En özel ve zorlu zamanınızda yanınızda.</p>
                         </div>
                     </div>
                     <div class="grid-rows-1 flex items-center justify-end pr-44">
-                        <p class="font-light">Anasayfa / Tarifler</p>
+                        <p class="font-light text-pink-700">Anasayfa / Tarifler</p>
                     </div>
                 </div>
             </div>
@@ -73,7 +35,7 @@ mamatariflerim | zor ama güzel günlerinizde daima yanınızda
 
     <div class="grid grid-cols-12 gap-4 container mx-auto">
         <div class="col-span-8 pl-44">
-            <p class="text-white bg-indigo-700 w-max py-1 px-3 rounded-md">Tüm Tarifler</p>
+            <p class="text-white bg-pink-700 w-max py-1 px-3 rounded-md">Tüm Tarifler</p>
             <h3 class="text-4xl mt-4">
                 Tarif Başlığı
             </h3>
@@ -94,7 +56,7 @@ mamatariflerim | zor ama güzel günlerinizde daima yanınızda
             </div>
         </div>
         <div class="col-span-3 p-14">
-            <h3 class="text-yellow-300 font-bold">Mama tarifi ara</h3>
+            <h3 class="text-pink-700 font-bold">Mama tarifi ara</h3>
             <input class="border-2 border-gray-300 p-2 w-full mt-6 text-sm" placeholder="sağlıklı tarifler burada!" type="text">
             <div class="mt-28">
                 <img src="https://picsum.photos/142/192" class="w-full object-cover h-60" alt="">

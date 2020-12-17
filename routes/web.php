@@ -18,4 +18,5 @@ Route::get('/', [Homepage::class, 'index'])->name('homepage');
 Route::get('/sayfa', [Homepage::class, 'index']);
 Route::get('/kategori/{category}', [Homepage::class, 'category'])->name('category');
 Route::get('{category}/{slug}', [Homepage::class, 'single'])->name('single');
-
+Route::get('/contact', [Homepage::class, 'contact'])->name('contact');
+Route::post('/contact', [Homepage::class, 'contactpost'])->name('contact.post');
