@@ -1,18 +1,21 @@
 <?php
 
+use App\Http\Controllers\Back\Dashboard;
 use App\Http\Controllers\Front\Homepage;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+
+// Back Routes
+
+Route::get('/admin/panel', [Dashboard::class, 'index']);
+
+
+
+
+
+
+
+// Front Routes
 
 Route::get('/', [Homepage::class, 'index'])->name('homepage');
 Route::get('/sayfa', [Homepage::class, 'index']);
