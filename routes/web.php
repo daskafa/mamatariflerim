@@ -1,5 +1,7 @@
 <?php
 
+
+use App\Http\Controllers\Back\AuthController;
 use App\Http\Controllers\Back\Dashboard;
 use App\Http\Controllers\Front\Homepage;
 use Illuminate\Support\Facades\Route;
@@ -7,9 +9,10 @@ use Illuminate\Support\Facades\Route;
 
 // Back Routes
 
-Route::get('/admin/panel', [Dashboard::class, 'index']);
-
-
+Route::get('/admin/panel', [Dashboard::class, 'index'])->name('admin.dashboard');
+Route::get('/admin/giris', [AuthController::class, 'login'])->name('admin.login');
+Route::post('/admin/giris', [AuthController::class, 'loginPost'])->name('admin.login.post');
+Route::get('/admin/cikis', [AuthController::class, 'logout'])->name('admin.logout');
 
 
 

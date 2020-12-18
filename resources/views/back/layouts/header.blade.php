@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 
 <head>
     <!-- Required meta tags-->
@@ -10,7 +10,7 @@
     <meta name="keywords" content="au theme template">
 
     <!-- Title Page-->
-    <title>Dashboard</title>
+    <title>@yield('title', 'mamatariflerim | Yönetim Paneli')</title>
 
     <!-- Fontfaces CSS-->
     <link href="{{asset('back/')}}/css/font-face.css" rel="stylesheet" media="all">
