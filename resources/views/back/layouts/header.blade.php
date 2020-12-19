@@ -21,6 +21,8 @@
     <!-- Bootstrap CSS-->
     <link href="{{asset('back/')}}/vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
 
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
+
     <!-- Vendor CSS-->
     <link href="{{asset('back/')}}/vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
     <link href="{{asset('back/')}}/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">

@@ -18,11 +18,16 @@
     <script src="{{asset('back/')}}/vendor/circle-progress/circle-progress.min.js"></script>
     <script src="{{asset('back/')}}/vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
     <script src="{{asset('back/')}}/vendor/chartjs/Chart.bundle.min.js"></script>
-    <script src="{{asset('back/')}}/vendor/select2/select2.min.js">
-    </script>
-
+    <script src="{{asset('back/')}}/vendor/select2/select2.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
     <!-- Main JS-->
     <script src="{{asset('back/')}}/js/main.js"></script>
 
+    <script>
+        $(document).ready( function () {
+            $('#table_id').DataTable();
+          } );
+        //   CKEDITOR.replace( 'editor1' );
+        </script>
 
 </body>

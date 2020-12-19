@@ -1,6 +1,6 @@
 <?php
 
-
+use App\Http\Controllers\Back\ArticleController;
 use App\Http\Controllers\Back\AuthController;
 use App\Http\Controllers\Back\Dashboard;
 use App\Http\Controllers\Front\Homepage;
@@ -16,6 +16,9 @@ Route::post('giris', [AuthController::class, 'loginPost'])->name('login.post');
 
 Route::prefix('admin')->name('admin.')->middleware('isAdmin')->group(function(){
     Route::get('panel', [Dashboard::class, 'index'])->name('dashboard');
+
+    Route::resource('tarifler', ArticleController::class);
+
     Route::get('cikis', [AuthController::class, 'logout'])->name('logout');
 });
 
