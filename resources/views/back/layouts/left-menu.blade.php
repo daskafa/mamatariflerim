@@ -12,9 +12,13 @@
                             <a class="js-arrow" href="{{ route('admin.dashboard') }}">
                                 <i class="fas fa-tachometer-alt"></i>Panel</a>
                         </li>
-                        <li class="@if(Request::segment(2)== 'tarifler') active @endif">
+                        <li class="@if(Request::segment(2)== 'tarifler' and !Request::segment(3)) active @endif">
                             <a href="{{ route('admin.tarifler.index') }}">
                                 <i class="fas fa-align-justify"></i>Tüm Tarifler</a>
+                        </li>
+                        <li class="@if(Request::segment(2)== 'tarifler' and Request::segment(3)== 'create') active @endif">
+                            <a href="{{ route('admin.tarifler.create') }}">
+                                <i class="fas fa-align-justify"></i>Tarif Oluştur</a>
                         </li>
                     </ul>
                 </nav>

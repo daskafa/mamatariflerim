@@ -31,9 +31,9 @@
     <link href="{{asset('back/')}}/vendor/slick/slick.css" rel="stylesheet" media="all">
     <link href="{{asset('back/')}}/vendor/select2/select2.min.css" rel="stylesheet" media="all">
     <link href="{{asset('back/')}}/vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
-
     <!-- Main CSS-->
     <link href="{{asset('back/')}}/css/theme.css" rel="stylesheet" media="all">
+    @toastr_css
 
 </head>
 <body class="animsition">

@@ -18,7 +18,7 @@
             @foreach ($articles as $article)
                 <tr>
                     <td>
-                        <img src="{{ $article->image }}" style="width:10em;">
+                        <img src="{{ asset($article->image) }}" style="width:10em;">
                     </td>
                     <td>{{ $article->title }}</td>
                     <td>{{ $article->getCategory->name }}</td>
@@ -28,10 +28,10 @@
                         <a href="#" class="item" style="font-size: 1.5em;color:#333;">
                             <i class="zmdi zmdi-eye"></i>
                         </a>
-                        <a href="#" class="item" style="font-size: 1.5em;color:#333;margin-left:0.5em;">
+                        <a href="{{ route('admin.tarifler.edit', $article->id) }}" class="item" style="font-size: 1.5em;color:#333;margin-left:0.5em;">
                             <i class="zmdi zmdi-edit"></i>
                         </a>
-                        <a href="#" class="item" style="font-size: 1.5em;color:#333;margin-left:0.5em;">
+                        <a href="{{ route('admin.delete.article', $article->id) }}" class="item" style="font-size: 1.5em;color:#333;margin-left:0.5em;">
                             <i class="zmdi zmdi-delete"></i>
                         </a>
                     </td>

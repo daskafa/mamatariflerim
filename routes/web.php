@@ -16,10 +16,9 @@ Route::post('giris', [AuthController::class, 'loginPost'])->name('login.post');
 
 Route::prefix('admin')->name('admin.')->middleware('isAdmin')->group(function(){
     Route::get('panel', [Dashboard::class, 'index'])->name('dashboard');
-
     Route::resource('tarifler', ArticleController::class);
-
     Route::get('cikis', [AuthController::class, 'logout'])->name('logout');
+    Route::get('deletearticle/{id}', [ArticleController::class, 'delete'])->name('delete.article');
 });
 
 

@@ -4,8 +4,11 @@ namespace App\Http\Controllers\Back;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+
 // Models
 use App\Models\Article;
+use App\Models\Category;
 
 class ArticleController extends Controller
 {
@@ -27,7 +30,8 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        //
+        $categories = Category::all();
+        return view('back.articles.create', compact('categories')); // compact ile farklı modellerden veri de gönderilebiliyor
     }
 
     /**
@@ -38,7 +42,27 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $request->validate([
+            'title' => 'min:3',
+            'image' => 'required|image|mimes:jpeg,png,jpg|max:100'
+        ]);
+
+        $article = new Article;
+        $article->title = $request->title;
+        $article->category_id = $request->category;
+        $article->content = $request->content;
+        $article->slug = Str::slug($request->title);
+
+        if($request->hasFile('image')){
+            $imageName = Str::slug($request->title) . '.' . $request->image->getClientOriginalExtension();
+            $request->image->move(public_path('uploads'), $imageName); // public_path projedeki public klasörünü gösteriyor
+            $article->image = 'uploads/' . $imageName;
+        }
+        $article->save();
+        toastr()->success('Başarılı', 'Tarif Başarıyla Oluşturuldu');
+        return redirect()->route('admin.tarifler.index');
+
     }
 
     /**
@@ -60,7 +84,9 @@ class ArticleController extends Controller
      */
     public function edit($id)
     {
-        //
+        $article = Article::findOrFail($id);
+        $categories = Category::all();
+        return view('back.articles.update', compact('categories', 'article')); // compact ile farklı modellerden veri de gönderilebiliyor
     }
 
     /**
@@ -72,7 +98,31 @@ class ArticleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'title' => 'min:3',
+            'image' => 'image|mimes:jpeg,png,jpg|max:100'
+        ]);
+
+        $article = Article::findOrFail($id);
+        $article->title = $request->title;
+        $article->category_id = $request->category;
+        $article->content = $request->content;
+        $article->slug = Str::slug($request->title);
+
+        if($request->hasFile('image')){
+            $imageName = Str::slug($request->title) . '.' . $request->image->getClientOriginalExtension();
+            $request->image->move(public_path('uploads'), $imageName); // public_path projedeki public klasörünü gösteriyor
+            $article->image = 'uploads/' . $imageName;
+        }
+        $article->save();
+        toastr()->success('Başarılı', 'Tarif Başarıyla Güncellendi');
+        return redirect()->route('admin.tarifler.index');
+    }
+
+
+    public function delete($id){
+        Article::find($id)->delete();
+        return redirect()->route('admin.tarifler.index');
     }
 
     /**
