@@ -14,7 +14,7 @@
                 @endforeach
             </div>
             @endif
-            <form method="POST" action="{{ route('admin.tarifler.store') }}" enctype="multipart/form-data">
+            {{-- <form method="POST" action="{{ route('admin.tarifler.store') }}" enctype="multipart/form-data"> --}}
                 @csrf
                 <div class="row form-group">
                     <div class="col col-md-3">
@@ -30,7 +30,10 @@
                         <label for="textarea-input" class=" form-control-label">İçerik</label>
                     </div>
                     <div class="col-12 col-md-9">
-                        <textarea name="content" id="textarea-input" rows="9" placeholder="İçerik..." class="form-control"></textarea>
+                        {{-- <textarea name="content" id="textarea-input" rows="9" placeholder="İçerik..." class="form-control"></textarea> --}}
+                        <div id="editorjs"></div>
+                        <button id="save-button">Save</button>
+                        <pre id="output"></pre>
                     </div>
                 </div>
                 <div class="row form-group">
@@ -56,9 +59,10 @@
                 <button type="submit" class="btn btn-primary btn-sm">
                     <i class="fa fa-dot-circle-o"></i> Submit
                 </button>
-            </form>
+            {{-- </form> --}}
         </div>
     </div>
 </div>
 </section>
 @endsection
+

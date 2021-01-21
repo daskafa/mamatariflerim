@@ -23,12 +23,18 @@
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
     <!-- Main JS-->
     <script src="{{asset('back/')}}/js/main.js"></script>
-    @toastr_js
-    @toastr_render
+
     <script>
-        $(document).ready( function () {
-            $('#table_id').DataTable();
-          } );
+        // const editor = new EditorJS({
+        //   autofocus: true
+        // });
     </script>
 
+    <script>
+    $(document).ready( function () {
+        $('#table_id').DataTable();
+        } );
+    </script>
+ @toastr_js
+ @toastr_render
 </body>

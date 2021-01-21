@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Back;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
-
+use Illuminate\Support\Facades\File;
 // Models
 use App\Models\Article;
 use App\Models\Category;
@@ -45,7 +45,7 @@ class ArticleController extends Controller
 
         $request->validate([
             'title' => 'min:3',
-            'image' => 'required|image|mimes:jpeg,png,jpg|max:100'
+            'image' => 'required|image|mimes:jpeg,png,jpg|max:3000'
         ]);
 
         $article = new Article;
@@ -100,7 +100,7 @@ class ArticleController extends Controller
     {
         $request->validate([
             'title' => 'min:3',
-            'image' => 'image|mimes:jpeg,png,jpg|max:100'
+            'image' => 'image|mimes:jpeg,png,jpg|max:3000'
         ]);
 
         $article = Article::findOrFail($id);
@@ -121,7 +121,11 @@ class ArticleController extends Controller
 
 
     public function delete($id){
-        Article::find($id)->delete();
+        $article = Article::find($id);
+        if(File::exists($article->image)){
+            File::delete(public_path($article->image));
+        }
+        $article->delete();
         return redirect()->route('admin.tarifler.index');
     }
 
